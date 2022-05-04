@@ -1,0 +1,6 @@
+# Project exclude paths
+/repository/target/
+/service/target/
+/target/
+*.iml
+.idea
