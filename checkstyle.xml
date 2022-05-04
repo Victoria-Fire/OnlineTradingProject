@@ -53,9 +53,9 @@
         <module name="SimplifyBooleanReturn"/>
 
         <module name="InnerAssignment"/>
-        <module name="FinalClass"/>
-        <module name="InnerTypeLast"/>
-        <module name="ModifierOrder"/>
+<!--        <module name="FinalClass"/>-->
+<!--        <module name="InnerTypeLast"/>-->
+<!--        <module name="ModifierOrder"/>-->
         <module name="DeclarationOrder"/>
 
         <module name="ArrayTypeStyle"/>
