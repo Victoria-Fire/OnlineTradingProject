@@ -16,7 +16,9 @@
             );
             insert into seller (name_seller, surname_seller)
             values ('Мария', 'Кузьмина'),
-                   ('Петр', 'Акульев')
+                   ('Петр', 'Акульев'),
+                   ('Жанна', 'Сметанова'),
+                   ('Василий', 'Сапожников');
         </sql>
     </changeSet>
 
@@ -31,6 +33,8 @@
             );
             insert into buyer (name_buyer, surname_buyer)
             values ('Матвей', 'Краснов'),
+                   ('Семен', 'Лосин'),
+                   ('Соня', 'Бодрая'),
                    ('Зоя', 'Виноградова');
         </sql>
     </changeSet>
@@ -44,15 +48,17 @@
                 description varchar(1000),
                 start_date  date,
                 end_date    date,
-                start_price dec(10,2),
-                end_price   dec(10,2),
+                start_price dec(10, 2),
+                end_price   dec(10, 2),
                 seller_id   int,
                 constraint lot_pk primary key (lot_id),
                 constraint lot_seller_fk foreign key (seller_id) references seller (id)
             );
             insert into lot (name_lot, description, start_date, end_date, start_price, end_price, seller_id)
-            VALUES ('Будильник', 'Описание будильника', '2022-04-30', '2022-05-04', 36.0, 4.0, 2),
-                   ('Светильник', 'Описание светильника', '2022-05-01', '2022-05-05', 2.6, 1.25, 1);
+            VALUES ('Будильник', 'Описание будильника', '2022-05-03', '2022-05-07', 36.0, 4.0, 2),
+                   ('Светильник', 'Описание светильника', '2022-04-29', '2022-05-08', 100.25, 53.0, 1),
+                   ('Утюг', 'Описание утюга', '2022-04-08', '2022-05-10', 163.5, 75.5, 4),
+                   ('Холодильник', 'Описание холодильника', '2022-04-01', '2022-05-15', 478.0, 47.8, 1);
         </sql>
     </changeSet>
 
@@ -63,7 +69,7 @@
                 lot_id           int,
                 buyer_id         int,
                 date_of_purchase date,
-                current_price    dec(10,2),
+                current_price    dec(10, 2),
                 constraint order_history_pk primary key (lot_id),
                 constraint order_history_buyer_fk foreign key (buyer_id) references buyer (id)
             );

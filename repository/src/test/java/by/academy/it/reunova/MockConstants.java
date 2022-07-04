@@ -1,4 +1,4 @@
 package by.academy.it.reunova;
 
-public class Test {
+public class MockConstants {
 }
